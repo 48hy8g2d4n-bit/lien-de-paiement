@@ -1,0 +1,76 @@
+/* src/index.css */
+
+/* ==========================================================================
+   1. DÉCLARATION STRICTE DES POLICES LOCALES GILROY
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/Gilroy/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/Gilroy/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/Gilroy/Gilroy-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/Gilroy/Gilroy-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./assets/fonts/Gilroy/Gilroy-Heavy.ttf') format('truetype');
+  font-weight: 950;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   2. STYLES GENERAUX & CLASSES
+   ========================================================================== */
+
+body {
+  margin: 0;
+  font-family: 'Gilroy', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+}
+
+/* Arrière-plan global */
+.bg-global-app {
+  background-image: url('./assets/images/Fond.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Arrière-plan pour la bannière d'invitation de la carte virtuelle */
+.bg-invitation-virtuelle {
+  background-image: url('./assets/images/Fond virtuelle.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Arrière-plan pour la bannière d'invitation de la carte physique */
+.bg-invitation-physique {
+  background-image: url('./assets/images/Fond physique.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
