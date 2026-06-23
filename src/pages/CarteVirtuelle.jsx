@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
 
-// Importations des assets en chemin absolu (Vite)
-import drapeauGabon from "/src/assets/images/Gabon.png";
-import fondGlobalPng from "/src/assets/images/Fond.png";
-import logoWusuPng from "/src/assets/images/W.png"; 
-import iconeProfil from "/src/assets/images/Profil.png";
-import iconeTime from "/src/assets/images/Time.png";
-import logoMoovJpg from "/src/assets/images/Moov.png"; 
-import logoAirtelJpg from "/src/assets/images/Airtel.png"; 
-import contourPng from "/src/assets/images/Contour.png";
-import iconeAvionPng from "/src/assets/images/Receive.png";
-import selectionPng from "/src/assets/images/Selection.png";
-import thickPng from "/src/assets/images/Thick.png";
-import iconePhone from "/src/assets/images/Phone.png";
-import iconeResume from "/src/assets/images/Resume.png";
-import WePng from "/src/assets/images/We.png";
+// Importations des assets adaptées en chemin relatif (évite les erreurs de résolution Vite)
+import drapeauGabon from "../assets/images/Gabon.png";
+import fondGlobalPng from "../assets/images/Fond.png";
+import logoWusuPng from "../assets/images/W.png"; 
+import iconeProfil from "../assets/images/Profil.png";
+import iconeTime from "../assets/images/Time.png";
+import logoMoovJpg from "../assets/images/Moov.png"; 
+import logoAirtelJpg from "../assets/images/Airtel.png"; 
+import contourPng from "../assets/images/Contour.png";
+import iconeAvionPng from "../assets/images/Receive.png";
+import selectionPng from "../assets/images/Selection.png";
+import thickPng from "../assets/images/Thick.png";
+import iconePhone from "../assets/images/Phone.png";
+import iconeResume from "../assets/images/Resume.png";
+import WePng from "../assets/images/We.png";
 
 // Éléments spécifiques Carte Virtuelle
-import iconeSecurity from "/src/assets/images/Security.png";
-import fondVirtuelleJpg from "/src/assets/images/Fond virtuelle.png";
-import carteVirtuelleImg from "/src/assets/images/Carte Virtuelle.png";
-import iconeWalletPng from "/src/assets/images/Wallet.png";
-import iconeCartePng from "/src/assets/images/Icone_Carte.png"; 
+import iconeSecurity from "../assets/images/Security.png";
+import fondVirtuelleJpg from "../assets/images/Fond_virtuelle.png";
+import carteVirtuelleImg from "../assets/images/Carte_Virtuelle.png";
+import iconeWalletPng from "../assets/images/Wallet.png";
+import iconeCartePng from "../assets/images/Icone_Carte.png"; 
 
 export default function CarteVirtuelle() {
   const [operator, setOperator] = useState("moov");
@@ -199,15 +199,15 @@ export default function CarteVirtuelle() {
             </div>
           </div>
           
-        {/* Carte Positionnée à droite (Animation 3D ultra-visible - Carte Virtuelle) */}
+          {/* Carte Positionnée à droite (Animation 3D ultra-visible - Carte Virtuelle) */}
           <div className="card-image-wrapper" style={{ display: "flex", alignItems: "center", paddingLeft: "10px", flexShrink: 0, perspective: "800px" }}>
             
             <style>{`
               @keyframes ultraVisibleTiltVirtuelle {
                 0% { transform: rotateY(0deg) rotateX(0deg); }
-                25% { transform: rotateY(45deg) rotateX(5deg); }   /* Pivote fort à droite */
+                25% { transform: rotateY(45deg) rotateX(5deg); }
                 50% { transform: rotateY(0deg) rotateX(0deg); }
-                75% { transform: rotateY(-45deg) rotateX(-5deg); } /* Pivote fort à gauche */
+                75% { transform: rotateY(-45deg) rotateX(-5deg); }
                 100% { transform: rotateY(0deg) rotateX(0deg); }
               }
               .visible-tilt-card-virtuelle {
@@ -224,7 +224,7 @@ export default function CarteVirtuelle() {
                 height: "auto", 
                 objectFit: "contain",
                 borderRadius: "12px",
-                boxShadow: "0 12px 28px rgba(0, 0, 0, 0.45)", /* Ombre renforcée pour l'effet de profondeur */
+                boxShadow: "0 12px 28px rgba(0, 0, 0, 0.45)", 
                 transformStyle: "preserve-3d"
               }} 
             />
@@ -233,7 +233,7 @@ export default function CarteVirtuelle() {
 
         {/* 1. Opérateur */}
         <div style={{ marginBottom: "24px" }}>
-          <h3 style={{ fontSize: "14px", fontWeight: "700", color: "#000", margin: "0 0 14px 0" }}>1. Choisissez votre opérateur Mobile Money</h3>
+          <h3 style={{ fontSize: "14px", fontWeight: "700", color: "#000", margin: "0 0 14px 0" }}>1. Choose your Mobile Money operator</h3>
           <div style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
             
             <div style={{ position: "relative", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", width: "70px", height: "70px", borderRadius: "50%", boxSizing: "border-box" }} onClick={() => setOperator("moov")}>
@@ -259,12 +259,11 @@ export default function CarteVirtuelle() {
           </div>
         </div>
 
-       {/* 2. Numéro & Sélectionneur de Pays */}
+        {/* 2. Numéro & Sélectionneur de Pays */}
         <div style={{ marginBottom: "24px" }}>
           <h3 style={{ fontSize: "14px", fontWeight: "700", color: "#000", margin: "0 0 12px 0" }}>2. Votre numéro Mobile Money</h3>
           <div style={{ display: "flex", alignItems: "center", border: "1px solid #e5e7eb", borderRadius: "8px", padding: "12px 14px", backgroundColor: "#f9fafb" }}>
             
-            {/* Sélectionneur de pays avec message au clic */}
             <div 
               onClick={() => alert("Pour l'instant, seul le Gabon est disponible.")}
               style={{ 
@@ -280,7 +279,6 @@ export default function CarteVirtuelle() {
             >
               <img src={drapeauGabon} alt="Gabon" style={{ width: "22px", height: "auto", borderRadius: "2px" }} />
               <span style={{ fontSize: "14px", fontWeight: "800", color: "#000" }}>+241</span>
-              {/* Petite flèche indicatrice pour le choix du pays */}
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: "2px", opacity: 0.7 }}>
                 <path d="M1 1L5 5L9 1" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -290,13 +288,10 @@ export default function CarteVirtuelle() {
             
             <input 
               type="tel" 
-              placeholder="076 00 00 00" /* Placeholder mis à jour au format gabonais */
+              placeholder="076 00 00 00" 
               value={phoneNumber} 
               onChange={(e) => {
-                // Permet de ne garder uniquement que les chiffres (enlève les espaces ou lettres bonus)
                 const seulementsChiffres = e.target.value.replace(/\D/g, "");
-                
-                // Bloque strictement à 9 chiffres maximum
                 if (seulementsChiffres.length <= 9) {
                   setPhoneNumber(seulementsChiffres);
                 }
@@ -314,14 +309,15 @@ export default function CarteVirtuelle() {
             />
           </div>
         </div>
-       {/* 3. Montant */}
+
+        {/* 3. Montant */}
         <div style={{ marginBottom: "24px" }}>
           <h3 style={{ fontSize: "14px", fontWeight: "700", color: "#000", margin: "0 0 12px 0" }}>3. Montant à envoyer</h3>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", border: "1px solid #e5e7eb", borderRadius: "8px", padding: "12px 16px", backgroundColor: "#f9fafb" }}>
             <input 
               type="number" 
-              placeholder="0" /* Affiche 0 en gris quand le champ est vide */
-              value={amount === 0 ? "" : amount} /* Masque la valeur 0 pour laisser place au placeholder */
+              placeholder="0" 
+              value={amount === 0 ? "" : amount} 
               onChange={(e) => {
                 const val = e.target.value;
                 setAmount(val === "" ? 0 : Number(val));
@@ -333,19 +329,16 @@ export default function CarteVirtuelle() {
                 fontSize: "22px", 
                 fontWeight: "900", 
                 width: "75%", 
-                color: amount === 0 ? "#727272" : "#000", /* Gris si 0 ou vide, Noir dès qu'on écrit */
+                color: amount === 0 ? "#727272" : "#000", 
                 fontFamily: "'Gilroy', sans-serif" 
               }} 
             />
             <span style={{ fontSize: "15px", fontWeight: "900", color: amount === 0 ? "#727272" : "#000", flexShrink: 0 }}>Fcfa</span>
           </div>
           
-          {/* Nouveau conteneur flex strict pour une seule ligne */}
           <div style={{ display: "flex", gap: "4px", marginTop: "12px", width: "100%", justifyContent: "space-between" }}>
-            {[2000, 5000, 10000, 15000, 20000].map((val) => {
+            {[2000, 5000, 10000, 15000].map((val) => {
               const isSelected = amount === val;
-              
-              {/* Logique pour respecter exactement l'espacement de ton image (ex: 2000 mais 10 000) */}
               const affichageMontant = val >= 10000 ? `${val / 1000} 000` : val;
 
               return (
@@ -353,8 +346,8 @@ export default function CarteVirtuelle() {
                   key={val} 
                   onClick={() => setAmount(val)} 
                   style={{ 
-                    flex: 1, /* Permet aux boutons de remplir équitablement la ligne */
-                    padding: "8px 0", /* Réduit le padding horizontal pour gagner de la place */
+                    flex: 1, 
+                    padding: "8px 0", 
                     backgroundColor: "#FCE8F7", 
                     backgroundImage: isSelected ? "linear-gradient(to right, #B0529A, #8D4E99, #684A98, #524798, #4A4798)" : "none",
                     WebkitBackgroundClip: isSelected ? "text" : "unset",
@@ -362,11 +355,11 @@ export default function CarteVirtuelle() {
                     color: isSelected ? "#B0529A" : "#727272", 
                     border: isSelected ? "1px solid #B0529A" : "none", 
                     borderRadius: "20px", 
-                    fontSize: "11px", /* Taille ajustée pour les petits écrans */
+                    fontSize: "11px", 
                     fontWeight: "900", 
                     cursor: "pointer", 
                     fontFamily: "'Gilroy', sans-serif",
-                    whiteSpace: "nowrap", /* Empêche tout retour à la ligne du texte */
+                    whiteSpace: "nowrap", 
                     textAlign: "center"
                   }}
                 >
@@ -375,9 +368,9 @@ export default function CarteVirtuelle() {
               );
             })}
           </div>
-        
         </div>
-        {/* Récapitulatif complet avec l'image We.png en arrière-plan */}
+
+        {/* Récapitulatif complet */}
         <div style={{ 
           backgroundImage: `url(${WePng})`,
           backgroundPosition: "center",
@@ -405,12 +398,10 @@ export default function CarteVirtuelle() {
             </span>
           </div>
           
-         <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", marginBottom: "10px", gap: "10px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", marginBottom: "10px", gap: "10px" }}>
             <span style={{ fontWeight: "800", color: "#4A4798" }}>
               (Frais opérateur <span style={{ backgroundImage: "linear-gradient(to right, #B0529A, #8D4E99, #684A98, #524798, #4A4798)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", color: "#B0529A" }}>2%</span> + Frais WusuPay <span style={{ backgroundImage: "linear-gradient(to right, #B0529A, #8D4E99, #684A98, #524798, #4A4798)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", color: "#B0529A" }}>0,75%</span>):
             </span>
-            
-            {/* Si amount est à 0, la couleur reste gris (#727272). Dès que amount change, le dégradé s'active */}
             <span style={{ 
               fontWeight: "900", 
               backgroundImage: amount === 0 ? "none" : "linear-gradient(to right, #B0529A, #8D4E99, #684A98, #524798, #4A4798)", 
@@ -474,8 +465,6 @@ export default function CarteVirtuelle() {
 
         {/* Bouton Action Dégradé Premium */}
         <button style={{ width: "100%", padding: "14px", background: wusuGradient, color: "#ffffff", border: "none", borderRadius: "30px", fontSize: "15px", fontWeight: "900", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px", marginBottom: "18px", fontFamily: "'Gilroy', sans-serif" }}>
-          
-          {/* Ton icône personnalisée Security.png */}
           <img 
             src={iconeSecurity} 
             alt="Sécurité" 
@@ -486,7 +475,6 @@ export default function CarteVirtuelle() {
               flexShrink: 0 
             }} 
           />
-          
           Payer maintenant
         </button>
 
